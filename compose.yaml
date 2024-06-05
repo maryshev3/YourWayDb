@@ -12,3 +12,9 @@ services:
       PGDATA: ${PGDATA}
     volumes:
       - ./your_way_db.sql:/docker-entrypoint-initdb.d/your_way_db.sql
+    networks:
+      back_db_front: {}
+
+networks:
+  back_db_front:
+    external: true
